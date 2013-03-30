@@ -20,27 +20,29 @@ maximize Lucro:
 	(sum {p in Pratos} 
 		(KgsDeCarneClara[p] + KgsDeCarneEscura[p]) * PrecoDeVenda[p])
 	-
-	(sum {p in Perus} PrecoDosPerus[p])
+	(sum {p in TiposDePeru} QuantidadeDePerusComprados[p] * PrecoDosPerus[p]);
 
 # Restrição de demanda dos pratos
 s.t. RestricaoDeDemanda{p in Pratos}:
-	KgsDeCarneClara[p] + KgsDeCarneEscura[p] <= Demanda[p]
+	KgsDeCarneClara[p] + KgsDeCarneEscura[p] <= Demanda[p];
 
 # Restrição que relaciona a quantidade de carne clara utilizada à quantidade de 
 # perus comprados
 s.t. RestricaoDeUtilizacaoDeCarneClara:
-	sum {p in Pratos} KgsDeCarneClara[p] 
+	(sum {p in Pratos} KgsDeCarneClara[p]) 
 	<= 
-	sum {p in Perus} QuantidadeDeCarneClaraPorPeru[p]
+	(sum {p in TiposDePeru} QuantidadeDeCarneClaraPorPeru[p] * QuantidadeDePerusComprados[p]);
 
 # Restrição análoga, para carne escura
 s.t. RestricaoDeUtilizacaoDeCarneEscura:
 	sum {p in Pratos} KgsDeCarneEscura[p] 
 	<= 
-	sum {p in Perus} QuantidadeDeCarneEscuraPorPeru[p]
+	sum {p in TiposDePeru} QuantidadeDeCarneEscuraPorPeru[p] * QuantidadeDePerusComprados[p];
 
 # Restrição de proporcionalidade das carnes
 s.t. RestricaoDeProporcionalidade{p in Pratos}:
-	KgsDeCarneClara[p] / (KgsDeCarneClara[p] + KgsDeCarneEscura[p]) 
+	KgsDeCarneClara[p] 
 	>= 
-	PercentualMinimoDeCarneClara[p]
+	PercentualMinimoDeCarneClara[p] * ((KgsDeCarneClara[p] + KgsDeCarneEscura[p]));
+
+end;

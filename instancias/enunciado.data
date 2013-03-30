@@ -21,6 +21,8 @@ param QuantidadeDeCarneEscuraPorPeru :=
 	Tipo1 3
 	Tipo2 3;
 
-PercentualMinimoDeCarneClara :=
+param PercentualMinimoDeCarneClara :=
 	Prato1 0.7
 	Prato2 0.6;
+
+end;
