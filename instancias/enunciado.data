@@ -1,0 +1,26 @@
+set Pratos      := Prato1, Prato2;
+set TiposDePeru := Tipo1, Tipo2;
+
+param Demanda :=
+	Prato1 50
+	Prato2 30;
+
+param PrecoDeVenda :=
+	Prato1 8
+	Prato2 6;
+
+param PrecoDosPerus :=
+	Tipo1 10
+	Tipo2 8;
+
+param QuantidadeDeCarneClaraPorPeru :=
+	Tipo1 5
+	Tipo2 3;
+
+param QuantidadeDeCarneEscuraPorPeru :=
+	Tipo1 3
+	Tipo2 3;
+
+PercentualMinimoDeCarneClara :=
+	Prato1 0.7
+	Prato2 0.6;
