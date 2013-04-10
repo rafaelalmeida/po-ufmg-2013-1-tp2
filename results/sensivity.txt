@@ -1,0 +1,68 @@
+GLPK 4.48 - SENSITIVITY ANALYSIS REPORT                                                                         Page   1
+
+Problem:    restaurante
+Objective:  Lucro = 474 (MAXimum)
+
+   No. Row name     St      Activity         Slack   Lower bound       Activity      Obj coef  Obj value at Limiting
+                                          Marginal   Upper bound          range         range   break point variable
+------ ------------ -- ------------- ------------- -------------  ------------- ------------- ------------- ------------
+     1 Lucro        BS     474.00000    -474.00000          -Inf      444.00000      -1.00000        .      RestricaoDeProporcionalidade[Prato1]
+                                            .               +Inf      474.00000          +Inf          +Inf
+
+     2 RestricaoDeDemanda[Prato1]
+                    NU      50.00000        .               -Inf       10.00000      -6.60000     210.00000 RestricaoDeUtilizacaoDeCarneEscura
+                                           6.60000      50.00000           +Inf          +Inf          +Inf
+
+     3 RestricaoDeDemanda[Prato2]
+                    NU      30.00000        .               -Inf         .           -4.80000     330.00000 KgsDeCarneClara[Prato2]
+                                           4.80000      30.00000      150.00000          +Inf    1050.00000 RestricaoDeUtilizacaoDeCarneEscura
+
+     4 RestricaoDeUtilizacaoDeCarneClara
+                    NU        .             .               -Inf           -Inf      -2.00000          -Inf
+                                           2.00000        .             8.00000          +Inf     490.00000 RestricaoDeUtilizacaoDeCarneEscura
+
+     5 RestricaoDeUtilizacaoDeCarneEscura
+                    BS      -4.80000       4.80000          -Inf      -28.80000      -1.25000     480.00000 RestricaoDeProporcionalidade[Prato1]
+                                            .             .             1.20000      55.00000     210.00000 RestricaoDeDemanda[Prato1]
+
+     6 RestricaoDeProporcionalidade[Prato1]
+                    NL        .             .             .            -3.00000          -Inf     480.00000 RestricaoDeUtilizacaoDeCarneEscura
+                                          -2.00000          +Inf       15.00000       2.00000     444.00000 KgsDeCarneEscura[Prato1]
+
+     7 RestricaoDeProporcionalidade[Prato2]
+                    NL        .             .             .            -3.00000          -Inf     480.00000 RestricaoDeUtilizacaoDeCarneEscura
+                                          -2.00000          +Inf       12.00000       2.00000     450.00000 KgsDeCarneEscura[Prato2]
+
+GLPK 4.48 - SENSITIVITY ANALYSIS REPORT                                                                         Page   2
+
+Problem:    restaurante
+Objective:  Lucro = 474 (MAXimum)
+
+   No. Column name  St      Activity      Obj coef   Lower bound       Activity      Obj coef  Obj value at Limiting
+                                          Marginal   Upper bound          range         range   break point variable
+------ ------------ -- ------------- ------------- -------------  ------------- ------------- ------------- ------------
+     1 KgsDeCarneClara[Prato1]
+                    BS      35.00000       8.00000        .             7.00000      -1.42857     144.00000 RestricaoDeDemanda[Prato1]
+                                            .               +Inf       50.00000      10.00000     544.00000 RestricaoDeProporcionalidade[Prato1]
+
+     2 KgsDeCarneClara[Prato2]
+                    BS      18.00000       6.00000        .              .           -2.00000     330.00000 RestricaoDeDemanda[Prato2]
+                                            .               +Inf       30.00000       8.00000     510.00000 RestricaoDeProporcionalidade[Prato2]
+
+     3 KgsDeCarneEscura[Prato1]
+                    BS      15.00000       8.00000        .                -Inf       6.00000     444.00000 RestricaoDeProporcionalidade[Prato1]
+                                            .               +Inf       15.00000          +Inf          +Inf
+
+     4 KgsDeCarneEscura[Prato2]
+                    BS      12.00000       6.00000        .                -Inf       4.00000     450.00000 RestricaoDeProporcionalidade[Prato2]
+                                            .               +Inf       12.00000          +Inf          +Inf
+
+     5 QuantidadeDePerusComprados[Tipo1]
+                    BS      10.60000     -10.00000        .                -Inf     -13.33333     438.66667 QuantidadeDePerusComprados[Tipo2]
+                                            .               +Inf       13.60000        .          580.00000 RestricaoDeProporcionalidade[Prato1]
+
+     6 QuantidadeDePerusComprados[Tipo2]
+                    NL        .           -8.00000        .            -4.00000          -Inf     482.00000 RestricaoDeUtilizacaoDeCarneEscura
+                                          -2.00000          +Inf       17.66667      -6.00000     438.66667 QuantidadeDePerusComprados[Tipo1]
+
+End of report

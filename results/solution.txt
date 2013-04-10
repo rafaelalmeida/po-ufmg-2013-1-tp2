@@ -1,0 +1,57 @@
+Problem:    restaurante
+Rows:       7
+Columns:    6
+Non-zeros:  22
+Status:     OPTIMAL
+Objective:  Lucro = 474 (MAXimum)
+
+   No.   Row name   St   Activity     Lower bound   Upper bound    Marginal
+------ ------------ -- ------------- ------------- ------------- -------------
+     1 Lucro        B            474                             
+     2 RestricaoDeDemanda[Prato1]
+                    NU            50                          50           6.6 
+     3 RestricaoDeDemanda[Prato2]
+                    NU            30                          30           4.8 
+     4 RestricaoDeUtilizacaoDeCarneClara
+                    NU             0                          -0             2 
+     5 RestricaoDeUtilizacaoDeCarneEscura
+                    B           -4.8                          -0 
+     6 RestricaoDeProporcionalidade[Prato1]
+                    NL             0            -0                          -2 
+     7 RestricaoDeProporcionalidade[Prato2]
+                    NL             0            -0                          -2 
+
+   No. Column name  St   Activity     Lower bound   Upper bound    Marginal
+------ ------------ -- ------------- ------------- ------------- -------------
+     1 KgsDeCarneClara[Prato1]
+                    B             35             0               
+     2 KgsDeCarneClara[Prato2]
+                    B             18             0               
+     3 KgsDeCarneEscura[Prato1]
+                    B             15             0               
+     4 KgsDeCarneEscura[Prato2]
+                    B             12             0               
+     5 QuantidadeDePerusComprados[Tipo1]
+                    B           10.6             0               
+     6 QuantidadeDePerusComprados[Tipo2]
+                    NL             0             0                          -2 
+
+Karush-Kuhn-Tucker optimality conditions:
+
+KKT.PE: max.abs.err = 1.78e-14 on row 1
+        max.rel.err = 4.44e-17 on row 6
+        High quality
+
+KKT.PB: max.abs.err = 0.00e+00 on row 0
+        max.rel.err = 0.00e+00 on row 0
+        High quality
+
+KKT.DE: max.abs.err = 4.44e-16 on column 1
+        max.rel.err = 2.61e-17 on column 3
+        High quality
+
+KKT.DB: max.abs.err = 0.00e+00 on row 0
+        max.rel.err = 0.00e+00 on row 0
+        High quality
+
+End of output
