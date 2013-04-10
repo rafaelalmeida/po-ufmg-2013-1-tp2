@@ -19,6 +19,9 @@ def main(args):
 		exit()
 
 	n_pratos, n_perus = int(args[1]), int(args[2])
+	print generate_instance(n_pratos, n_perus)
+
+def generate_instance(n_pratos, n_perus):
 	instance = ""
 
 	# gera o set de pratos
@@ -69,8 +72,8 @@ def main(args):
 		["Prato%d %.1f" % (i, random.uniform(*FAIXA_PERCENTUAL_CARNE_CLARA)) 
 			for i in range(n_pratos)])
 
-	# imprime a instância gerada
-	print instance
+	# retorna a instância gerada
+	return instance
 
 def generate_param(prefix, items, single_line=False):
 	lb = "\n" if not single_line else ""
