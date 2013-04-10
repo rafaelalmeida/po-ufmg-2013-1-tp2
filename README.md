@@ -11,4 +11,10 @@ do enunciado, utilize o seguinte comando:
 ```
 
 Para rodar os experimentos e gerar os gráficos, são necessários o Python
-e o GNU Plot.
+e o GNU Plot. Os gráficos foram gerados no Microsoft Excel. Para rodar a suíte
+de testes e gerar os resultados de desempenho na pasta `/experiments` em CSV,
+utilize o seguinte comando:
+
+```
+python run_experiments.py
+```
