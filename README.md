@@ -9,3 +9,6 @@ do enunciado, utilize o seguinte comando:
 ```
 ./run_example.sh
 ```
+
+Para rodar os experimentos e gerar os gráficos, são necessários o Python
+e o GNU Plot.

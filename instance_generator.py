@@ -6,6 +6,7 @@ import random
 # semente gerada aleatoriamente
 SEED = 14594637
 
+# faixa de valores - determinados manualmente
 FAIXA_PRECOS_PERUS = (5, 20)
 FAIXA_PRECOS_PRATOS = (3, 15)
 FAIXA_DEMANDAS = (10, 50)
@@ -22,6 +23,8 @@ def main(args):
 	print generate_instance(n_pratos, n_perus)
 
 def generate_instance(n_pratos, n_perus):
+	# inicializa o gerador de números pseudo-aleatórios e a saída
+	random.seed(SEED)
 	instance = ""
 
 	# gera o set de pratos
